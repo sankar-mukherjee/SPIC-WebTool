@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="2.5" xmlns="http://java.sun.com/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
+    <servlet>
+        <servlet-name>UploadServlet</servlet-name>
+        <servlet-class>servlets.UploadServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>newDommino</servlet-name>
+        <servlet-class>servlets.newDommino</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>administrator</servlet-name>
+        <servlet-class>servlets.administrator</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>main_server</servlet-name>
+        <url-pattern>/main_server</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>UploadServlet</servlet-name>
+        <url-pattern>/UploadServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>newDommino</servlet-name>
+        <url-pattern>/newDommino</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>administrator</servlet-name>
+        <url-pattern>/administrator</url-pattern>
+    </servlet-mapping>
+    <security-constraint>
+        <web-resource-collection>
+            <web-resource-name>SecureResource</web-resource-name>
+            <url-pattern>/index.jsp</url-pattern>
+            <url-pattern>/index2.jsp</url-pattern>
+            <url-pattern>/index3.jsp</url-pattern>
+        </web-resource-collection>
+        <user-data-constraint>
+            <transport-guarantee>CONFIDENTIAL</transport-guarantee>
+        </user-data-constraint>
+    </security-constraint>
+</web-app>
